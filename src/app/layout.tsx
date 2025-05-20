@@ -23,7 +23,7 @@ export default function RootLayout({
 }>) {
 
   return (
-    <html lang="en">
+    <html lang="en" style={{ fontSize: 37.5 }}>
 
       {/* 音频预加载 */}
 
@@ -240,7 +240,7 @@ export default function RootLayout({
         href="/img/audioStart.png"
         as="image"
       />
-       <link
+      <link
         rel="preload"
         href="/img/audioStop.png"
         as="image"

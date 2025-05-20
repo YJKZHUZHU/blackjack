@@ -30,7 +30,7 @@ export default function MobileLayout() {
       <div className={classNames(style['page-container-header'])}>
         <Image src='/img/mobile/title.png' width={100} height={12} alt='' />
         <div className={classNames(style['page-container-header-address'])}>
-          <span className={classNames(style['page-container-header-address-text'])}>WALLET ADDRESS : {formatAddress(address)}</span>
+          <span className={classNames(style['page-container-header-address-text'])}>WALLET : {formatAddress(address)}</span>
           <ClickableImage
             className=" cursor-pointer"
             onClick={disconnectWallet}

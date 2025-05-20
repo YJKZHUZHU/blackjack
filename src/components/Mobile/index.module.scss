@@ -31,7 +31,7 @@
       background-image: url('/img/address.png');
       background-repeat: no-repeat;
       background-size: 100% 100%;
-      width: 205px;
+      max-width: 150px;
       height: 25px;
       padding: 0 8px;
       display: flex;
@@ -42,11 +42,14 @@
       .page-container-header-address-text {
         color: #ffffff;
         flex: 1;
-        max-width: 205px;
+        max-width: 150px;
         font-family: "DM Sans";
         font-size: 11px;
         font-style: normal;
         font-weight: 700;
+        overflow: hidden;        /* 隐藏溢出内容 */
+        white-space: nowrap;     /* 禁止文本换行 */
+        text-overflow: ellipsis; /* 显示省略符号 */
       }
     }
 
