@@ -23,7 +23,7 @@ export default function RootLayout({
 }>) {
 
   return (
-    <html lang="en" style={{ fontSize: 37.5 }}>
+    <html lang="en" style={{ fontSize: 39 }}>
 
       {/* 音频预加载 */}
 
