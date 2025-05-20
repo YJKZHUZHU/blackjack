@@ -1,0 +1,88 @@
+.leaderBoardMaskContainer {
+  width: 828px;
+  height: 589px;
+  background-image: url('/img/ruleMask.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  padding: 20px;
+  position: relative;
+
+  .leaderBoardMaskContent {
+    background-image: url('/img/ruleContentBg.png');
+    width: 100%;
+    height: 100%;
+    background-size: 100% 100%;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 80px;
+
+    .leaderBoardMaskContentList {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      align-self: center;
+
+      .leaderBoardMaskContentListItem {
+        display: flex;
+        height: 44px;
+        padding-right: 20px;
+        align-items: center;
+        gap: 30px;
+        width: 462px;
+
+        &.leaderBoardMaskContentListItemActive {
+          border-radius: 6px;
+          background: rgba(124, 198, 255, 0.21);
+
+          .leaderBoardMaskContentListItemIndex {
+            color: #FFEDA7;
+          }
+        }
+
+        .leaderBoardMaskContentListItemIndex {
+          width: 38px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: #74E3FF;
+          text-align: center;
+          font-family: Audiowide;
+          font-size: 24px;
+          font-style: normal;
+          font-weight: 400;
+        }
+
+        .leaderBoardMaskContentListItemAddress {
+          flex: 1;
+          color: #FFF;
+          font-family: "Bakbak One";
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 400;
+        }
+
+        .leaderBoardMaskContentListItemAvatar {
+          display: flex;
+          gap: 11px;
+          align-items: center;
+
+          .leaderBoardMaskContentListItemScores {
+            text-align: right;
+            font-family: "Bakbak One";
+            font-size: 28px;
+            font-style: normal;
+            font-weight: 400;
+            background: linear-gradient(180deg, #FFE2F2 0%, #A5BAFF 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
+        }
+
+      }
+    }
+  }
+
+
+}

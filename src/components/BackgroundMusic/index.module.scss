@@ -1,0 +1,28 @@
+.audioControl {
+  position: absolute;
+  right: 45px;
+  top: 120px;
+  width: 32px;
+  height: 32px;
+  z-index: 999;
+  cursor: pointer;
+  &.mobile {
+    right: auto;
+    left: 22px;
+    top: 60px;
+  }
+  .rotatingImage {
+    transition: transform 0.2s ease-in-out;
+    animation: spin 2s linear infinite;
+  }
+  
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,92 @@
+stages:
+  - build
+  - deploy
+
+services:
+  - docker:dind
+
+variables:
+  DOCKER_DRIVER: overlay2
+  # 禁用 GitLab CI 缓存
+  # cache: {}
+
+# 环境变量
+before_script:
+  - export SERVICE_NAME="blackjack-web"
+  - export IMAGE_NAME=$HARBOR_HOST/$HARBOR_PROJECT/$SERVICE_NAME:$CI_COMMIT_SHORT_SHA
+  - export PORT="8008:3000"
+  - echo $SERVICE_NAME;
+  - echo $IMAGE_NAME;
+  - echo $PORT;
+  - docker login -u "$HARBOR_USERNAME" -p "$HARBOR_PASSWORD" $HARBOR_HOST
+
+build:
+  image: docker:stable
+  stage: build
+  tags:
+    - aws
+  script:
+    - echo "Full SHA:$CI_COMMIT_SHA"
+    - docker build -t $IMAGE_NAME -f Dockerfile .
+    - docker push $IMAGE_NAME
+
+extract_dist:
+  image: docker:stable
+  stage: deploy
+  tags:
+    - aws
+  script:
+    - docker pull $IMAGE_NAME
+    - docker create --name temp_container $IMAGE_NAME
+    - docker cp temp_container:/usr/share/nginx/html ./dist
+    - ls -al ./dist
+    - docker rm temp_container
+  artifacts:
+    paths:
+      - dist
+    when: always
+    expire_in: 1 hour
+
+upload_to_s3:
+  image: python:3.11-alpine
+  stage: deploy
+  tags:
+    - aws
+  before_script: []
+  needs:
+    - job: extract_dist
+      artifacts: true
+  variables:
+    AWS_ACCESS_KEY_ID: $S3AccessKeyID
+    AWS_SECRET_ACCESS_KEY: $S3SecretAccessKey
+    AWS_DEFAULT_REGION: $S3Region
+    S3_BUCKET: blackjack-web
+  script:
+    - pip install --no-cache-dir awscli
+    - echo "Uploading to S3 $S3_BUCKET..."
+    - ls -al
+    - ls -al ./dist
+    # 上传非 HTML 文件，缓存 7 天
+    - aws s3 cp ./dist s3://$S3_BUCKET/ --recursive --exclude "*.html" --cache-control "max-age=604800"
+
+    # 上传 HTML 文件，不缓存
+    - aws s3 cp ./dist s3://$S3_BUCKET/ --recursive --exclude "*" --include "*.html" --cache-control "no-cache"
+
+
+
+#deploy:
+#  image: docker:stable
+#  stage: deploy
+#  tags:
+#    - nuwa
+#  script:
+#    - docker pull $IMAGE_NAME
+#    # 检查服务是否存在
+#    - if docker service ls --format '{{.Name}}' | grep -w $SERVICE_NAME; then
+#      echo "Service exists, updating...";
+#      docker service update --image $IMAGE_NAME --update-parallelism 1 --update-delay 10s --update-order start-first $SERVICE_NAME;
+#      else
+#      echo "Service does not exist, creating...";
+#      docker service create --name $SERVICE_NAME --replicas 1 --restart-condition any -p $PORT $IMAGE_NAME;
+#      fi
+

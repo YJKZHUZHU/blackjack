@@ -1,0 +1,47 @@
+html,
+body {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+.brand-logo {
+	font-family: 'Arvo', serif;
+}
+
+h1 {
+	font-size: 4em;
+}
+
+h4 {
+	font-size: 1.75em;
+}
+
+p {
+	font-size: 1.25em;
+	line-height: 1.75em;
+}
+
+strong {
+	font-family: 'Arvo', serif;
+	padding: 4px 0;
+	display: block;
+	font-size: 1.10em;
+}
+
+.combo-animation {
+	transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.combo-animation:active {
+	transform: scale(0.96) translateY(2px);
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+	filter: brightness(0.95);
+}

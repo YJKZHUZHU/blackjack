@@ -1,0 +1,32 @@
+.claimMaskContainer {
+  width: 828px;
+  height: 400px;
+  background-image: url('/img/claimMask.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  padding: 20px;
+  position: relative;
+
+  .claimMaskContent {
+    background-image: url('/img/claimContentBg.png');
+    width: 100%;
+    height: 100%;
+    background-size: 100% 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 40px;
+
+    .claimMaskContentDesc {
+      flex: 1;
+      width: 663px;
+      color: #FFF;
+      text-align: center;
+      font-family: "Bakbak One";
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      margin: 40px 0;
+    }
+  }
+}

@@ -1,0 +1,101 @@
+.leaderBoardMaskContainer {
+  width: 348px;
+  height: 632px;
+  // max-height: 90%;
+  background-image: url('/img/mobile/bigMask.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  padding: 20px;
+  position: relative;
+
+  .leaderBoardMaskContent {
+    background-image: url('/img/mobile/bigContentBg.png');
+    width: 100%;
+    height: 100%;
+    background-size: 100% 100%;
+    display: flex;
+    flex-direction: column;
+    // padding-bottom: 80px;
+
+    .leaderBoardMaskContentList {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      align-self: center;
+      width: 100%;
+      padding: 0 26px;
+
+      .leaderBoardMaskContentListItem {
+        display: flex;
+        height: 56px;
+        padding-right: 12px;
+        align-items: center;
+        gap: 20px;
+        width: 100%;
+
+        &.leaderBoardMaskContentListItemActive {
+          border-radius: 6px;
+          background: rgba(124, 198, 255, 0.21);
+
+          .leaderBoardMaskContentListItemIndex {
+            color: #FFEDA7;
+          }
+        }
+
+        .leaderBoardMaskContentListItemIndex {
+          width: 25px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: #74E3FF;
+          text-align: center;
+          font-family: Audiowide;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+        }
+
+        .leaderBoardMaskContentListItemAddress {
+          flex: 1;
+          color: #FFF;
+          font-family: "Bakbak One";
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 400;
+        }
+
+        .leaderBoardMaskContentListItemAvatar {
+          display: flex;
+          gap: 11px;
+          align-items: center;
+
+          .leaderBoardMaskContentListItemScores {
+            text-align: right;
+            font-family: "Bakbak One";
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            background: linear-gradient(180deg, #FFE2F2 0%, #A5BAFF 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
+        }
+
+      }
+    }
+  }
+
+
+}
+
+.text {
+  color: #FFF;
+  text-align: center;
+  font-family: "Alte DIN 1451 Mittelschrift";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26.8px;
+}

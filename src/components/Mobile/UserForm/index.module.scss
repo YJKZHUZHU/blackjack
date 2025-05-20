@@ -1,0 +1,139 @@
+.maskContent {
+  width: 348px;
+  height: 632px;
+  background-image: url('/img/mobile/bigMask.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  padding: 20px;
+  position: relative;
+
+
+  .userForm {
+    background-image: url('/img/mobile/bigContentBg.png');
+    width: 100%;
+    height: 100%;
+    background-size: 100% 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 50px;
+
+    .form {
+      flex: 1;
+      overflow-y: scroll;
+      display: flex;
+      flex-direction: column;
+      margin-top: 10px;
+      gap: 8px;
+      width: 100%;
+      padding: 0 12px 20px 12px;
+
+      .input {
+        color: #ffffff;
+        border-radius: 4px;
+        background: rgba(147, 108, 255, 0.21);
+        border: none;
+
+        &:focus-visible {
+          --tw-ring-color: rgba(147, 108, 255, 0.21);
+        }
+
+        &:focus {
+          background-color: rgba(147, 108, 255, 0.21);
+          color: #ffffff;
+        }
+
+      }
+
+      .selectButton {
+        cursor: pointer;
+        color: #ffffff;
+        border-radius: 4px;
+        background: rgba(147, 108, 255, 0.21);
+        border: none;
+        justify-content: space-between;
+
+        &.placeholder {
+          color: rgba(255, 255, 255, 0.37);
+        }
+      }
+
+      .formItem {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        .label {
+          color: #FFF;
+          font-family: "Bakbak One";
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 23.45px;
+        }
+
+        .genderList {
+          display: flex;
+          gap: 6px;
+          align-items: center;
+
+          .genderItem {
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #FFF;
+            text-align: center;
+            font-family: Inter;
+            font-size: 11px;
+            font-style: normal;
+            font-weight: 400;
+            height: 30px;
+            width: 90px;
+            padding: 0 13px;
+            border-radius: 4px;
+            background: rgba(147, 108, 255, 0.21);
+            position: relative;
+            border: none;
+            transition: transform 0.2s ease;
+
+            &::before {
+              content: '';
+              position: absolute;
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              border-radius: 8px;
+              border: 0 solid #DC68E7;
+              transition: border-width 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+
+            &:hover {
+              color: #DC68E7;
+            }
+
+            &.active {
+              transform: scale(1.01);
+
+              &::before {
+                border-width: 2px; // 选中时显示2px边框
+              }
+
+              color: #DC68E7;
+
+            }
+          }
+        }
+
+        .validate {
+          color: #FF6D6D;
+          font-family: Inter;
+          font-size: 11px;
+          font-style: normal;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}
