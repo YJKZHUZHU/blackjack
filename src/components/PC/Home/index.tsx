@@ -17,7 +17,7 @@ const Home: FC<{ onConnectWallet: () => void }> = (props) => {
       </div>
       <div data-aos="fade-up" className={style.pageHomeContainerContent}>
         <Image src='/img/LMBlackjack.png' alt='' width={549} height={125} />
-        <span className={style.pageHomeContainerContentDesc}>Choose your bet and drift into the world of LM Planet Blackjack.</span>
+        <span className={style.pageHomeContainerContentDesc}>Choose your bet and drift into the world of VapeVibes Blackjack.</span>
         <ClickableImage
           className=" cursor-pointer"
           onClick={() => onConnectWallet()}

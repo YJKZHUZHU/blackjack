@@ -5,7 +5,7 @@ import { useMediaQuery } from '@/hooks/useMediaQuery';
 
 
 export default function Home() {
-  const isMobile = useMediaQuery('(max-width: 768px)')
+  const isMobile = useMediaQuery('(max-width: 539px)')
 
   return isMobile ? <MobileLayout /> : <PCLayout />
 }

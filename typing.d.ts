@@ -12,6 +12,7 @@ declare global {
     okxwallet?: Eip1193Provider | undefined
     createWalletWidget?: (config: WidgetConfig) => Promise<WalletWidget>;
     solana?: {
+      signMessage: (message: Uint8Array<ArrayBufferLike>, string) => ({ signature: Uint8Array | number[] })
       isPhantom: boolean;
       connect: (options?: { onlyIfTrusted?: boolean }) => Promise<{ publicKey: PublicKey }>;
       disconnect: () => Promise<void>;

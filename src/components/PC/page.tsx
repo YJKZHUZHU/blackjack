@@ -40,7 +40,7 @@ export default function Home() {
           <Image src='/img/title.png' width={200} height={24} alt='' />
         </div>
         <div className={style['page-container-header-right']}>
-          <div className={style['page-container-header-right-balance']}>{formatScores(balance)}</div>
+          <div className={style['page-container-header-right-balance']}>{formatScores(balance, {decimal:2})}</div>
           <Rule />
         </div>
       </div>

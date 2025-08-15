@@ -46,7 +46,7 @@ const Leaderboard = () => {
 
   return (
     <>
-      <div className=" flex flex-col w-[90px] h-[80px] justify-between items-center">
+      <div className={style.imgItem}>
         <ClickableImage
           className=" cursor-pointer"
           onClick={onOpen}
@@ -55,12 +55,6 @@ const Leaderboard = () => {
           src='/img/mobile/leaderboard.png' />
         <span className={style.text}>Leaderboard</span>
       </div>
-      {/* <ClickableImage
-        onClick={onOpen}
-        className=" cursor-pointer"
-        width={80}
-        height={82}
-        src="/img/mobile/leaderboard.png" /> */}
       {
         showMask && (
           <Mask

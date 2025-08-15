@@ -1,6 +1,7 @@
 "use client"
 import { UserInfo } from "@/store/user"
 import axios, { AxiosInstance } from "axios"
+import { userStore } from '@/store/user'
 
 export interface ErrorRes extends Error {
   url?: string
@@ -18,7 +19,8 @@ function createService() {
 
   service.interceptors.response.use(
     (response) => {
-      // const code = response.data.code || response.data?.data?.code
+      const code = response.data.code || response.data?.data?.code
+      console.log("==response==", code)
       // const data = response.data || response.data?.data
 
       // console.log("==response==", data)
@@ -100,7 +102,7 @@ export function createRequestFunction(service: AxiosInstance) {
     (config) => {
 
 
-      // console.log('config', config.data)
+      console.log('config', config.data)
       // let data = Object.create(null)
       // data = config.data ? config.data : {}
 
@@ -111,6 +113,19 @@ export function createRequestFunction(service: AxiosInstance) {
       // config.data = data
 
       // console.log('config11', config.data)
+      if (userStore.getState().wallet) {
+        config.headers['address'] = userStore.getState().wallet
+
+      }
+      if (userStore.getState().signature) {
+        config.headers['sign'] = userStore.getState().signature
+      }
+
+      // config.headers = {
+      //   ...config.headers,
+      //   address: userStore.getState().wallet, 
+      //   sign: userStore.getState().signature
+      // }
 
       return config
     },
@@ -200,4 +215,21 @@ export const getUserRank = (data: { wallet: string, page: number, size: number }
 // 获取当前用户排名
 export const getCurrentUserRank = (data: { wallet: string }) => {
   return server.get<IResp<{ userInfo: UserInfo, ranking: number }>>('/v1/user/getUserRankingReq', { params: data })
+}
+
+// 获取验证码
+export const getCaptcha = (data: { address: string }) => {
+  return server.get<IResp<{ code: string }>>("/v1/secure/getCode", { params: data })
+}
+
+
+export interface IAirdropInfo {
+  chips_percentage: number,
+  airdrop_amount: number,
+  is_airdrop_time: boolean,
+}
+
+// 获取空投情况
+export const getAirdropInfo = (data: { solAddress: string }) => {
+  return server.post<IResp<IAirdropInfo>>("/v1/airdrop/result", data)
 }

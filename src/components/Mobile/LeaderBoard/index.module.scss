@@ -1,11 +1,10 @@
 .leaderBoardMaskContainer {
-  width: 348px;
-  height: 632px;
-  // max-height: 90%;
+  width: calc(100vw * 348 / 390);
+  height: calc(100vw * 632 / 390);
   background-image: url('/img/mobile/bigMask.png');
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  padding: 20px;
+  padding: calc(100vw * 20 / 390);
   position: relative;
 
   .leaderBoardMaskContent {
@@ -15,27 +14,26 @@
     background-size: 100% 100%;
     display: flex;
     flex-direction: column;
-    // padding-bottom: 80px;
 
     .leaderBoardMaskContentList {
       flex: 1;
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: calc(100vw * 8 / 390);
       align-self: center;
       width: 100%;
-      padding: 0 26px;
+      padding: 0 calc(100vw * 26 / 390);
 
       .leaderBoardMaskContentListItem {
         display: flex;
-        height: 56px;
-        padding-right: 12px;
+        height: calc(100vw * 56 / 390);
+        padding-right: calc(100vw * 12 / 390);
         align-items: center;
-        gap: 20px;
+        gap: calc(100vw * 20 / 390);
         width: 100%;
 
         &.leaderBoardMaskContentListItemActive {
-          border-radius: 6px;
+          border-radius: calc(100vw * 6 / 390);
           background: rgba(124, 198, 255, 0.21);
 
           .leaderBoardMaskContentListItemIndex {
@@ -44,14 +42,14 @@
         }
 
         .leaderBoardMaskContentListItemIndex {
-          width: 25px;
+          width: calc(100vw * 25 / 390);
           display: flex;
           justify-content: center;
           align-items: center;
           color: #74E3FF;
           text-align: center;
           font-family: Audiowide;
-          font-size: 16px;
+          font-size: calc(100vw * 16 / 390);
           font-style: normal;
           font-weight: 400;
         }
@@ -67,13 +65,13 @@
 
         .leaderBoardMaskContentListItemAvatar {
           display: flex;
-          gap: 11px;
+          gap: calc(100vw * 11 / 390);
           align-items: center;
 
           .leaderBoardMaskContentListItemScores {
             text-align: right;
             font-family: "Bakbak One";
-            font-size: 18px;
+            font-size: calc(100vw * 18 / 390);
             font-style: normal;
             font-weight: 400;
             background: linear-gradient(180deg, #FFE2F2 0%, #A5BAFF 100%);
@@ -94,8 +92,17 @@
   color: #FFF;
   text-align: center;
   font-family: "Alte DIN 1451 Mittelschrift";
-  font-size: 16px;
+  font-size: calc(100vw * 16 / 390);
   font-style: normal;
   font-weight: 400;
-  line-height: 26.8px;
+  line-height: calc(100vw * 26.8 / 390);
+}
+
+.imgItem {
+  display: flex;
+  flex-direction: column;
+  width: calc(100vw * 90 / 390);
+  height: calc(100vw * 80 / 390);
+  justify-content: space-between;
+  align-items: center;
 }

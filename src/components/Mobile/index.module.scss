@@ -1,5 +1,5 @@
 .page-container {
-  background-image: url('/img/mobile/game.png');
+  background-image: url('/img/mobile/gameNew.png');
   background-repeat: no-repeat;
   background-size: cover;
   height: 100%;
@@ -12,7 +12,7 @@
   flex-direction: column;
 
   .page-container-header {
-    height: 52px;
+    height:  calc(100vw * 52 / 390);;
     background: linear-gradient(90deg,
         rgba(0, 0, 0, 0) 0.49%,
         rgba(61, 9, 152, 0.8) 35.32%,
@@ -31,9 +31,9 @@
       background-image: url('/img/address.png');
       background-repeat: no-repeat;
       background-size: 100% 100%;
-      width: 150px;
-      height: 25px;
-      padding: 0 8px;
+      width:  calc(100vw * 220 / 390);;
+      height:  calc(100vw * 25 / 390);;
+      padding: 0  calc(100vw * 8 / 390);;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -42,36 +42,36 @@
       .page-container-header-address-text {
         color: #ffffff;
         flex: 1;
-        max-width: 150px;
+        max-width:  calc(100vw * 210 / 390);;
         font-family: "DM Sans";
         font-size: 11px;
         font-style: normal;
         font-weight: 700;
-        overflow: hidden;        /* 隐藏溢出内容 */
-        white-space: nowrap;     /* 禁止文本换行 */
-        text-overflow: ellipsis; /* 显示省略符号 */
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
       }
     }
 
     .page-container-header-right {
       display: flex;
-      gap: 20px;
+      gap:  calc(100vw * 20 / 390);;
 
       .page-container-header-right-balance {
         background-image: url('/img/total.png');
-        width: 112px;
-        height: 40px;
+        width:  calc(100vw * 112 / 390);;
+        height:  calc(100vw * 40 / 390);;
         background-size: 100% 100%;
         background-repeat: no-repeat;
         color: #FFF;
         font-family: "DM Sans";
-        font-size: 17.6px;
+        font-size:  calc(100vw * 17.6 / 390);
         font-style: normal;
         font-weight: 700;
         display: flex;
         align-items: center;
         justify-content: flex-end;
-        padding-right: 8px;
+        padding-right:  calc(100vw * 8 / 390);;
       }
     }
 
@@ -82,24 +82,36 @@
     display: flex;
     position: relative;
     flex-direction: column;
-    padding-bottom: 90px;
+    padding-bottom:  calc(100vw * 90 / 390);;
 
     .page-container-header-right-balance {
       background-image: url('/img/total.png');
-      width: 77px;
-      height: 27px;
+      width:  calc(100vw * 77 / 390);;
+      height:  calc(100vw * 27 / 390);
       background-size: 100% 100%;
       background-repeat: no-repeat;
       color: #FFF;
       font-family: "DM Sans";
-      font-size: 15px;
+      font-size:  calc(100vw * 15 / 390);;
       font-style: normal;
       font-weight: 700;
       display: flex;
       align-items: center;
       justify-content: flex-end;
-      padding-right: 8px;
-      margin-right: 12px;
+      padding-right:  calc(100vw * 8 / 390);;
+      margin-right:  calc(100vw * 12 / 390);;
     }
+  }
+
+  .page-container-bottom {
+    padding-right: calc(100vw * 32 / 390);
+    padding-left: calc(100vw * 12 / 390);
+    padding-bottom: calc(100vw * 10 / 390);
+    width: 100%;
+    bottom: 0;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 }

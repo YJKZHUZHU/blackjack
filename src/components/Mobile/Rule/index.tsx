@@ -22,7 +22,7 @@ const Rule = ({ type = 'top' }: Props) => {
             height={24}
             src='/img/tip.png' />
         ) : (
-          <div className=" flex flex-col w-[80px] h-[80px] justify-between items-center">
+          <div className={style.imgItem}>
             <ClickableImage
               className=" cursor-pointer"
               onClick={() => setShowMask(true)}

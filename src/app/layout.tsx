@@ -23,7 +23,7 @@ export default function RootLayout({
 }>) {
 
   return (
-    <html lang="en" style={{ fontSize: 39 }}>
+    <html lang="en">
 
       {/* 音频预加载 */}
 
@@ -132,7 +132,7 @@ export default function RootLayout({
 
       <link
         rel="preload"
-        href="/img/game.png"
+        href="/img/gameNew.png"
         as="image"
       />
       <link
@@ -540,7 +540,7 @@ export default function RootLayout({
       />
       <link
         rel="preload"
-        href="/img/mobile/game.png"
+        href="/img/mobile/gameNew.png"
         as="image"
       />
       <link

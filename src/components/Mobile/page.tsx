@@ -30,7 +30,7 @@ export default function MobileLayout() {
       <div className={classNames(style['page-container-header'])}>
         <Image src='/img/mobile/title.png' width={100} height={12} alt='' />
         <div className={classNames(style['page-container-header-address'])}>
-          <span className={classNames(style['page-container-header-address-text'])}>WALLET : {formatAddress(address)}</span>
+          <span className={classNames(style['page-container-header-address-text'])}>WALLET ADDRESS : {formatAddress(address)}</span>
           <ClickableImage
             className=" cursor-pointer"
             onClick={disconnectWallet}
@@ -45,7 +45,7 @@ export default function MobileLayout() {
         </div>
         <Game />
       </div>
-      <div className=" pb-[10px] w-full fixed bottom-0 flex items-center justify-between pl-[12px] pr-[32px]">
+      <div className={classNames(style['page-container-bottom'])}>
         <Rule type="bottom" />
         <LeaderBoard />
         <Claim />

@@ -67,6 +67,7 @@ const usePersistentWallet = () => {
     }
     try {
       const response = await window.solana.connect();
+      console.log('连接钱包成功:', response);
       setPublicKey(response.publicKey);
       play()
       init(response.publicKey.toString())
